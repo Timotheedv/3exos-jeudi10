@@ -1,21 +1,33 @@
-let musique = [
-    "Anissa",
-    "m2",
-    "m3",
-    "m4",
-    "m5"
-]
+let musique = ["Anissa", "m2", "m3", "m4", "m5"];
 
-let paul = {
-    name: "Paul",
-    health: 10
+class personnage {
+  constructor(name, vie) {
+    this.name = name;
+    this.vie = vie;
+  }
 }
 
-l
-console.log(paul.health)
- while (paul.health > 0){
+let paul = new personnage("Paul", 10);
+console.log(paul.vie);
 
- }
-// let degats= musique[0] - (health -1)
+for (let index = 0; index < 30; index++) {
+  let algo = Math.floor(Math.random() * musique.length);
+  let alea = musique[algo];
 
+  if (alea == "Anissa") {
+    console.log(alea);
+    paul.vie = paul.vie - 1;
+    console.log(paul.vie);
+  } else {
+    console.log(alea);
+  }
 
+  if (paul.vie <= 0) {
+    console.log("EXPLOSION");
+    break;
+  }
+}
+
+if (paul.vie > 0) {
+  console.log((paul.name = " est arrivé à destination sans AVC "));
+}
